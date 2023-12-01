@@ -1,0 +1,48 @@
+{% extends "cv_pdf/base.html" %}
+{% block body %}
+
+<div class="container mt-5">
+  <h2>Resume</h2>
+  <table class="table table-bordered table-striped-columns mt-3">
+      <tbody>
+          <tr>
+              <th scope="row">Name</th>
+              <td>{{ profile.name }}</td>
+          </tr>
+          <tr>
+              <th scope="row">Email</th>
+              <td>{{ profile.email }}</td>
+          </tr>
+          <tr>
+              <th scope="row">Phone</th>
+              <td>{{ profile.phone }}</td>
+          </tr>
+          <tr>
+              <th scope="row">Summary</th>
+              <td>{{ profile.summary }}</td>
+          </tr>
+          <tr>
+              <th scope="row">Degree</th>
+              <td>{{ profile.degree }}</td>
+          </tr>
+          <tr>
+              <th scope="row">School</th>
+              <td>{{ profile.school }}</td>
+          </tr>
+          <tr>
+              <th scope="row">University</th>
+              <td>{{ profile.university }}</td>
+          </tr>
+          <tr>
+              <th scope="row">Previous Work</th>
+              <td>{{ profile.previous_work }}</td>
+          </tr>
+          <tr>
+              <th scope="row">Skills</th>
+              <td>{{ profile.skills }}</td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "cv_pdf/base.html" %}
+{% block body %}
+<div class="container text-center mt-5 mb-5">
+  {% if profiles %}
+    <h1 class="mb-3">Showing {{ profiles|length }} saved data.</h1>
+    <table class="table table-info table-striped-columns">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">E-Mail</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for profile in profiles %}
+        <tr>
+          <th scope="row">{{ profile.name }}</th>
+          <td>{{ profile.email }}</td>
+          <td>{{ profile.phone }}</td>
+          <td>
+            <a class="btn btn-primary" href="{% url 'details' profile.pk %}">View</a>
+            <a href="{% url 'download' profile.id %}" class="btn btn-info">Download PDF</a>
+
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <h1>Nothing is here...</h1>
+  {% endif %}
+</div>
+{% endblock %}
+
